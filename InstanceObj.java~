@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+public class InstanceObj(){
+	
+	private int numberOfTasks;
+	private int statusOfCompletion;
+	
+	//default constructor
+	public InstanceObj(){
+		numberOfTasks = 0;
+		statusOfCompletion = 0;
+	}
+
+	//constructor
+	public InstanceObj(int tasks, int completion){
+		numberOfTasks = tasks;
+		statusOfCompletion = completion;
+	}
+	
+	//returns number of tasks running. If tasks are 0, then it is not running
+	public int getStatusT(){
+		return numberOfTasks;
+	}
+
+	//returns X/100 for percentage of task completion
+	public int getStatusC(){
+		return statusOfCompletion;
+	}
+			
+	//sets the status to run or not running
+	public void setStatusT(int run){
+		numberOfTasks = run;
+	}	
+
+	//set from 1-100 status of instance
+	public void setStatusC(int comp){
+		statusOfCompletion = comp;
+	}
+}

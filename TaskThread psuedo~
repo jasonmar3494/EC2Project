@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class TaskThread implements Runnable{
+	
+
+	public TaskThread(){
+	}
+		
+	public void run(){
+		try{
+			take # nodes from information and divide data into equal number of nodes
+			puts the separated tasks into an Arraylist accessible by all threads
+		}
+		catch(Exception e){}
+	}
+}

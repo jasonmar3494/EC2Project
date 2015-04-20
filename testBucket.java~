@@ -1,0 +1,23 @@
+import java.io.*;
+import com.amazonaws.auth.*;
+import com.amazonaws.services.ec2.*;
+import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.s3.*;
+import java.util.*;
+import java.net.*;
+import org.apache.commons.codec.binary.Base64;
+
+
+public class testBucket{
+	public static void main(String[] args){
+			InputStream credentialsAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("AwsCredentials.properties");
+ 						AWSCredentials credentials = new PropertiesCredentials(credentialsAsStream);
+	
+						AmazonS3 s3 = new AmazonS3Client(credentials);
+						Bucket b = s3.createBucket("serveripinfo");
+						S3Object stringobj = new S3Object("HelloWorld.txt", "Hel World");
+						s3.putObject(b, stringObject);
+
+	}
+}
+

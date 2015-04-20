@@ -1,0 +1,29 @@
+import java.io.*;
+import com.amazonaws.auth.*;
+import com.amazonaws.services.ec2.*;
+import com.amazonaws.services.ec2.model.*;
+
+
+public class ec2launch{
+	public static void main(String[] args)throws Exception{
+		
+		InputStream credentialsAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("AwsCredentials.properties");
+  		//Preconditions.checkNotNull(credentialsAsStream, "File 'AwsCredentials.properties' NOT found in the classpath");
+		
+		AWSCredentials credentials = new PropertiesCredentials(credentialsAsStream);
+
+		AmazonEC2 ec2 = new AmazonEC2Client(credentials);
+		ec2.setEndpoint("ec2.us-west-2c.amazonaws.com");
+
+		RunInstancesRequest ec2launch = new RunInstancesRequest();
+		ec2launch.withImageId("ami-ea9c05da");
+		ec2launch.withInstanceType("t1.micro");
+		ec2launch.withMinCount(1);
+		ec2launch.withMaxCount(1);
+		ec2launch.withKeyName("keypair1");
+		ec2launch.withSecurityGroups("quick-start-1");
+		
+		RunInstancesResult runInstances = ec2.runInstances(ec2launch);
+	}
+}
+

@@ -1,0 +1,24 @@
+import java.util.*;
+
+
+public class StatusThread implements Runnable{
+	
+	Thread s;
+	public StatusThread(){
+		s = new Thread(this, "StatusThread");
+		s.start();
+	}
+		
+	public void run(){
+		try{
+			
+			while(tasks still running){					
+				for(int i=0;i<number of nodes currently on map 		
+				gets instance name/ID and makes a new entry in the map with 					executing/free
+				completion status 
+				Thread.sleep(10);
+			}		
+		}
+		catch(InterruptedException e){}
+	}
+}

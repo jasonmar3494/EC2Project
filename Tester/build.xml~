@@ -1,0 +1,15 @@
+<!-- Ant build script for compiling and running the AWS Java SDK console application sample.
+     Don't forget to fill in your AWS access credentials in AwsCredentials.properties
+     before trying to run it.  -->
+
+<project name="testBucket" default="run" basedir=".">
+	<path id="aws.java.sdk.classpath">
+		<fileset dir="${basedir}/../aws-java-sdk-1.6.1/lib" includes="**/*.jar"/>
+		<fileset dir="${basedir}/../aws-java-sdk-1.6.1/third-party" includes="**/*.jar"/>
+		<pathelement location="."/>
+	</path>
+	<target name="run">
+		<javac srcdir="." destdir="." classpathref="aws.java.sdk.classpath"/>
+		<java classname="testBucket" classpathref="aws.java.sdk.classpath" fork="true"/>
+	</target>
+</project>

@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Reminder{
+	Timer instanceTimer;
+	
+	public Reminder(int seconds){
+		instanceTimer = new Timer();
+		timer.schedule(new RemindTask(), seconds*1000);
+	}
+	
+	class RemindTask extends TimerTask{
+		public void run(){
+			MasterLaunch.nodes = MasterLaunch.nodes + 5;
+			instanceTimer.cancel();		
+		}
+	}
+	
+}
+

@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class InstanceThread implements Runnable{
+	
+
+	public InstanceThread(){
+	}
+		
+	public void run(){
+		try{
+						
+			do{		
+				int instanceCurRun = 0;				
+				int sizeMap =  statusMap.size();
+				for(int i=0;i<sizeMap;i++){
+					if(statusMap element i is running){
+						instanceCurRun++;
+					}
+					
+				}
+				getStatuses of instances from Map
+					running or failed
+					execution completion yes or no
+					time to completion 
+					
+				if(any instance failed)	
+					get instance id or # 
+					access Map for task assigned
+					relaunch instance and reassign task
+				if(current instances running< count of computednodes)		
+					launches an Instance	
+					assign task from ArrayList of tasks
+				if(instance not doing any tasks)
+					assign a new task from list of tasks
+			}while(instanceCurRun>0)
+		}
+		catch(Exception e){}
+	}
+}

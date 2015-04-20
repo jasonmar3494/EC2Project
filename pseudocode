@@ -1,0 +1,54 @@
+
+import java.util.*;
+
+public class MasterSystem(){
+	public static void main(String[] args) throws Exception{
+		
+		int nodes = computeNodes()
+		
+		Map statusMap = new HashMap();
+		List taskList = new ArrayList();
+		/*
+		hashmap contains key(instanceID?)
+		  		 value(executing/free)
+				 value(completion status or time to completion)
+				  
+		*/
+
+		Statuses of state machine:
+			Launch
+				initiates the threads
+			Slave Fail
+				relaunch slave and get task assigned initially
+			Assign Tasks
+				assign tasks/split up tasks 
+			Monitor Statuses
+				constantly monitor completion time
+			Termination
+				if all statuses are complete kill instances
+			
+		
+		Thread t1 = new Thread(new InstanceThread());
+		Thread t2 = new Thread(new TaskThread());
+		Thread t3 = new Thread(new StatusThread());
+		
+		
+	}
+		
+}
+private int computeNodes(){
+	launches a test instance
+	inserts a small file from the directory user has specified
+	gets the time for executing the file
+	returns estimated time to user
+	computes the number of nodes needed
+}
+
+	thread 1 launches instances based on task #/gets instances related statuses
+	thread 2 collects statuses
+	thread 3 assign tasks
+	
+	shared data structure of tasks/statuses
+
+	test tasks and get time of execution to decide how many tasks to run. run a fake slave for test
+
